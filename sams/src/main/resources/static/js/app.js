@@ -5,8 +5,7 @@
 var indexApp = angular.module("indexApp",['ngRoute']);
 var registerApp = angular.module("registerApp",[]);
 var loginApp = angular.module("loginApp",[]);
-indexApp.config(['$routeProvider',function ($routeProvider,$locationProvider) {
-    $locationProvider.html5Mode(true);
+indexApp.config(['$routeProvider',function ($routeProvider) {
     $routeProvider.when('/login',{
         templateUrl: 'views/login.html'
     }).when('/register',{

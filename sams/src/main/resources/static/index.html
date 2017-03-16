@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="indexApp">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,14 +24,9 @@
 
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top" ng-app="indexApp">
+<div class="navbar navbar-inverse navbar-fixed-top" ng-controller="indexCtrl">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="#">学生社团</a>
         </div>
         <div class="collapse navbar-collapse">
@@ -44,9 +39,8 @@
 </div>
 
 <div class="container-full">
-    <ng-view></ng-view>
+    <ng-view style="height: 100%"></ng-view>
 </div>
-
 
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
