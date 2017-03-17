@@ -3,13 +3,13 @@
  */
 'use strict';
 var indexApp = angular.module("indexApp",['ngRoute']);
-var registerApp = angular.module("registerApp",[]);
-var loginApp = angular.module("loginApp",[]);
 indexApp.config(['$routeProvider',function ($routeProvider) {
     $routeProvider.when('/login',{
         templateUrl: 'views/login.html'
     }).when('/register',{
         templateUrl: 'views/register.html',
-        controller: 'test'
+        controller: 'registerCtrl'
+    }).when('/forget',{
+        templateUrl: 'view/forget.html'
     }).otherwise({redirectTo:'/login'});
 }]);
