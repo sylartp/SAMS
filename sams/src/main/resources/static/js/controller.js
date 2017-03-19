@@ -8,8 +8,9 @@ indexApp
     $scope.$routeParams = $routeParams;
     })
     .controller("login",function($scope,$http){
-        $scope.login = function(){
+        $scope.submit = function(path){
 
+            window.location = 'views/'+path;
         }
     });
 

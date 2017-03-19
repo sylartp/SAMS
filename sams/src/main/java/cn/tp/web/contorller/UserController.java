@@ -14,4 +14,8 @@ public class UserController {
     public ModelAndView index() {
         return new ModelAndView("index");
     }
+    @RequestMapping("/success")
+    public ModelAndView success(){
+        return new ModelAndView("views/success");
+    }
 }
