@@ -10,8 +10,11 @@ indexApp
     .controller("login",function($scope,$http){
         $scope.submit = function(path){
 
-            window.location = 'views/'+path;
+            window.location = 'views/'+path+'.html';
         }
+    })
+    .controller("register",function ($scope,$http){
+
     });
 
 

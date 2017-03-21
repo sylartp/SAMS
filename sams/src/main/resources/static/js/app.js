@@ -8,7 +8,7 @@ indexApp.config(['$routeProvider',function ($routeProvider) {
         templateUrl: 'views/login.html'
     }).when('/register',{
         templateUrl: 'views/register.html',
-        controller: 'registerCtrl'
+        controller: 'register'
     }).when('/forget',{
         templateUrl: 'view/forget.html'
     }).otherwise({redirectTo:'/login'});
