@@ -10,7 +10,7 @@
                     <input type="email" id="inputEmail" class="input-lg col-lg-4" name="email" title="Enter you email."
                            placeholder="Enter your email address" ng-model="email" required>
                     <label style="color:red" class="pull-left control-label"
-                           ng-show="register.email.$dirty && register.email.$invalid">
+                           ng-show="register.email.$dirty || register.email.$invalid">
                         <label ng-show="register.email.$error.required">必填</label>
                         <label ng-show="register.email.$error.email">非法的邮箱地址</label>
                     </label>
@@ -21,6 +21,10 @@
                 <div class="col-sm-7 ">
                     <input type="password" id="inputPassword" class="col-lg-4 input-lg" title="Enter password."
                            placeholder="Enter your password" ng-model="pwd1" name="pwd1" required>
+                    <label style="color:red" class="pull-left control-label"
+                           ng-show="register.pwd1.$dirty">
+                        <label ng-show="register.pwd1.$error.required">必填</label>
+                    </label>
                 </div>
             </div>
             <div class="form-group">
@@ -28,6 +32,10 @@
                 <div class="col-sm-7">
                     <input type="password" class="col-lg-4 input-lg" title="Enter password again."
                            placeholder="Re-enter your password" ng-model="pwd2" name="pwd2" required>
+                    <label style="color:red" class="pull-left control-label" ng-show="judgement||register.pwd2.$dirty">
+                        <label ng-show="judgement">密码不匹配</label>
+                        <label ng-show="register.pwd2.$error.required">必填</label>
+                    </label>
                 </div>
             </div>
             <button type="button" class="btn btn-success" ng-click="register()">注册</button>

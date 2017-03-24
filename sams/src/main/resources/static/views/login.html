@@ -12,7 +12,7 @@
                            title="Enter you email."
                            placeholder="Enter your email address" ng-model="email" required>
                     <label style="color:red" class="pull-left control-label"
-                           ng-show="login.email.$dirty && login.email.$invalid">
+                           ng-show="login.email.$dirty || login.email.$invalid">
                         <label ng-show="login.email.$error.required">必填</label>
                         <label ng-show="login.email.$error.email">非法的邮箱地址</label>
                     </label>
