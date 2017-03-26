@@ -10,7 +10,7 @@
                 <div class="col-sm-7">
                     <input type="email" id="inputEmail" name="email" class="col-lg-4 input-lg"
                            title="Enter you email."
-                           placeholder="Enter your email address" ng-model="email" required>
+                           placeholder="Enter your email address" ng-model="user.email" required>
                     <label style="color:red" class="pull-left control-label"
                            ng-show="login.email.$dirty || login.email.$invalid">
                         <label ng-show="login.email.$error.required">必填</label>
@@ -23,7 +23,7 @@
                 <div class="col-sm-7">
                     <input type="password" id="inputPassword" name="password" class="col-lg-4 input-lg"
                            title="Enter password."
-                           placeholder="Enter your password" ng-model="password" required>
+                           placeholder="Enter your password" ng-model="user.password" required>
                     <label style="color:red" class="pull-left control-label" ng-show="login.password.$dirty">
                         <label ng-show="login.password.$error.required">必填</label>
                     </label>

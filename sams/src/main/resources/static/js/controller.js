@@ -8,19 +8,27 @@ indexApp
         $scope.$routeParams = $routeParams;
     })
     .controller("login", function ($scope, $http) {
+        $scope.user = {email: '', password: ''};
+        var email = $scope.user.email;
+        var pwd = $scope.user.password;
         $scope.submit = function (path) {
-
             window.location = 'views/' + path + '.html';
         }
     })
     .controller("register", function ($scope, $http) {
+        $scope.user = {email: '', pwd1: '', pwd2: ''};
         $scope.judgement = false;
-        var pwd1 = $scope.pwd1;
-        var pwd2 = $scope.pwd2;
-        if (pwd1 !== pwd2) {
-            $scope.judgement = true;
-        }
-
+        var email = $scope.user.email;
+        judge = function () {
+            var pwd1 = $scope.user.pwd1;
+            var pwd2 = $scope.user.pwd2;
+            if ((pwd1 !== pwd2) && pwd2 !== null && pwd2 !== undefined && pwd2 !== "") {
+                $scope.judgement = true;
+            }else {
+                $scope.judgement = false;
+            }
+        };
+        $scope.$watch('user.pwd2', judge);
     });
 
 

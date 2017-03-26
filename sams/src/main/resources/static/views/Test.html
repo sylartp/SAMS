@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.js"></script>
+    <script>
+        angular.module("test",[])
+            .controller("test",function ($scope) {
+                $scope.user = {test1:''};
+                test = function () {
+                    $scope.user.pp = $scope.user.test1;
+                    alert($scope.user.test1);
+                };
+                $scope.$watch('user.test1',test);
+            });
+    </script>
+</head>
+<body>
+    <div ng-controller="test">
+        <input ng-model="user.test1" name="test" ng-change="test()">
+        <span>{{user.pp}}</span>
+    </div>
+</body>
+</html>
