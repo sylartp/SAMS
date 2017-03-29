@@ -6,7 +6,7 @@
             <div class="form-group">
                 <label class="col-sm-5 control-label" for="inputEmail">Email</label>
                 <div class="col-sm-7">
-                    <input type="email" id="inputEmail" class="input-lg col-lg-4" name="email" title="Enter you email."
+                    <input type="email" id="inputEmail" class="input-lg col-lg-4" name="email" title="Enter your email."
                            placeholder="Enter your email address" ng-model="user.email" required>
                     <label style="color:red" class="pull-left control-label"
                            ng-show="register.email.$dirty || register.email.$invalid">
@@ -32,13 +32,23 @@
                     <input type="password" class="col-lg-4 input-lg" title="Enter password again."
                            placeholder="Re-enter your password" name="pwd2" ng-model="user.pwd2" ng-change="judge()"
                            required>
-                    <label style="color:red" class="pull-left control-label" ng-show="judgement||register.pwd2.$dirty">
-                        <label ng-show="judgement">密码不匹配</label>
+                    <label style="color:red" class="pull-left control-label" ng-show="user.judgement||register.pwd2.$dirty">
+                        <label ng-show="user.judgement">密码不匹配</label>
                         <label ng-show="register.pwd2.$error.required">必填</label>
                     </label>
                 </div>
             </div>
-            <button type="button" class="btn btn-success" ng-click="register()">注册</button>
+            <div class="form-group">
+                <label class="col-sm-5 control-label">姓名</label>
+                <div class="col-sm-7">
+                    <input type="text" class="col-lg-4 input-lg" title="Enter your name."
+                           placeholder="Enter your name" name="name" ng-model="user.name" required>
+                    <label style="color:red" class="pull-left control-label" ng-show="register.name.$dirty">
+                        <label ng-show="register.name.$error.required">必填</label>
+                    </label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-success" ng-click="register()" ng-disabled="register.$invalid&&!user.judgement">注册</button>
         </form>
     </div>
 </div>

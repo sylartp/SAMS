@@ -11,6 +11,8 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserMapper {
 
-    @Select("select * from user where name = #{name}")
-    User findUserByName(@Param("name")String name);
+    @Select("select * from user where name = #{email}")
+    User findUserByName(@Param("email")String email);
+
+
 }
