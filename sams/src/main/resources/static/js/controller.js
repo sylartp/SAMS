@@ -7,28 +7,35 @@ indexApp
         $scope.$location = $location;
         $scope.$routeParams = $routeParams;
     })
-    .controller("login", function ($scope, $http,$location) {
-        $scope.user = {email: '', password: ''};
-        var email = $scope.user.email;
-        var pwd = $scope.user.password;
-        $scope.submit = function (path) {
+    .controller("login", function ($scope, $http,$log) {
+        $scope.user = {};
+        $scope.submit = function () {
+            $log.log($scope.user);
             $http({
                 method : 'post',
                 url : 'login',
                 data : {
-
+                    email : $scope.user.email,
+                    password : $scope.user.password
                 }
-            }).then(function(){
-
-            }).then(function(){
-
+            }).then(function(resp){
+                console.log(resp.data);
+                if(resp.data) {
+                    alert("登陆成功");
+                    window.location = 'views/success.html';
+                }else {
+                    alert("用户名、密码不存在");
+                }
+            },function(resp){
+                console.log(resp.status);
+                alert(resp.status);
             });
-            $location = 'views/' + path + '.html';
         }
     })
-    .controller("register", function ($scope, $http,$location) {
-        $scope.user = {email: '', pwd1: '', pwd2: '', name: '',judgement: false};
-        judge = function () {
+    .controller("register",function($scope, $http,$log) {
+        var user = $scope.user = {};
+        $scope.judgement = false;
+        var judge = function () {
             var pwd1 = $scope.user.pwd1;
             var pwd2 = $scope.user.pwd2;
             if ((pwd1 !== pwd2) && pwd2 !== null && pwd2 !== undefined && pwd2 !== "") {
@@ -38,19 +45,25 @@ indexApp
             }
         };
         $scope.$watch('user.pwd2', judge);
-        $scope.register = function(){
+        $scope.logon = function(){
+            $log.log($scope.user);
             $http({
                 method : 'post',
-                url : '/register',
+                url : 'register',
                 data : {
                     email : $scope.user.email,
-                    pwd : $scope.user.pwd2,
+                    password : $scope.user.pwd2,
                     name : $scope.user.name
                 }
-            }).then(function success(){
-                $location = 'index.html';
-            }).then(function error(){
-                $location = 'views/error.html';
+            }).success(function successCallback(data,status){
+                $log.log(data);
+                $log.log(status);
+                if(data) {
+                    window.location = 'index.html';
+                }
+            }).error(function error(data){
+                $log.log(data);
+                window.location = 'views/success.html';
             });
         };
     });

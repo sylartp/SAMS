@@ -9,7 +9,7 @@ public class User {
     private String email;
     private String name;
     private String password;
-    private String gender;
+    private int gender; //0 means female;1 means male(男)
     private Date birthday;
     private String[] hobby;
     private String image;
@@ -21,10 +21,10 @@ public class User {
         super();
     }
 
-    public User(String email, String password) {
-        super();
+    public User(String email, String password, String name) {
         this.email = email;
         this.password = password;
+        this.name = name;
     }
 
     public String getEmail() {
@@ -35,11 +35,11 @@ public class User {
         this.email = email;
     }
 
-    public String getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(int gender) {
         this.gender = gender;
     }
 
