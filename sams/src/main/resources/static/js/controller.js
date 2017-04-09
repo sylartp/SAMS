@@ -22,7 +22,7 @@ indexApp
                 console.log(resp.data);
                 if(resp.data) {
                     alert("登陆成功");
-                    window.location = 'views/success.html';
+                    window.location = 'views/main.html';
                 }else {
                     alert("用户名、密码不存在");
                 }
