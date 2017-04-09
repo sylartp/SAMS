@@ -1,54 +1,43 @@
-<div class="row" ng-controller="register">
-    <div class="col-lg-12 text-center v-center">
-        <br><br>
-        <p class="lead">Register</p>
-        <form class="form-horizontal" name="register" novalidate>
+<div class="middle-box text-center loginscreen animated fadeInDown" ng-controller="register">
+    <div>
+        <div>
+
+            <h1 class="logo-name">IN+</h1>
+
+        </div>
+        <h3>Register to SAMS</h3>
+        <p>Create account to see it in action.</p>
+        <form class="m-t" role="form" novalidate name="register">
             <div class="form-group">
-                <label class="col-sm-5 control-label" for="inputEmail">Email</label>
-                <div class="col-sm-7">
-                    <input type="email" id="inputEmail" class="input-lg col-lg-4" name="email" title="Enter your email."
-                           placeholder="Enter your email address" ng-model="user.email" required>
-                    <label style="color:red" class="pull-left control-label"
-                           ng-show="register.email.$dirty || register.email.$invalid">
-                        <label ng-show="register.email.$error.required">必填</label>
-                        <label ng-show="register.email.$error.email">非法的邮箱地址</label>
-                    </label>
-                </div>
+                <input type="text" class="form-control" placeholder="Name" required="" ng-model="user.name" name="name">
+                <label style="color: red" class="pull-left control-label" ng-show="register.name.$dirty">
+                    <label ng-show="register.name.$error.required">必填</label>
+                </label>
             </div>
             <div class="form-group">
-                <label class="col-sm-5 control-label" for="inputPassword">Password</label>
-                <div class="col-sm-7 ">
-                    <input type="password" id="inputPassword" class="col-lg-4 input-lg" title="Enter password."
-                           placeholder="Enter your password" name="pwd1" ng-model=user.pwd1 required>
-                    <label style="color:red" class="pull-left control-label"
-                           ng-show="register.pwd1.$dirty">
-                        <label ng-show="register.pwd1.$error.required">必填</label>
-                    </label>
-                </div>
+                <input type="email" class="form-control" placeholder="Email" required="" ng-model="user.email" name="email" ng-focus="focus()">
+                <label style="color:red" class="pull-left control-label" ng-show="register.email.$dirty||register.email.$invalid||user.checkAccount">
+                    <label ng-show="register.email.$error.required">必填</label>
+                    <label ng-show="register.email.$error.email">非法的邮箱地址</label>
+                    <label ng-show="user.checkAccount">账号已存在</label>
+                </label>
             </div>
             <div class="form-group">
-                <label class="col-sm-5 control-label"></label>
-                <div class="col-sm-7">
-                    <input type="password" class="col-lg-4 input-lg" title="Enter password again."
-                           placeholder="Re-enter your password" name="pwd2" ng-model="user.pwd2" ng-change="judge()"
-                           required>
-                    <label style="color:red" class="pull-left control-label" ng-show="user.judgement||register.pwd2.$dirty">
-                        <label ng-show="user.judgement">密码不匹配</label>
-                        <label ng-show="register.pwd2.$error.required">必填</label>
-                    </label>
-                </div>
+                <input type="password" class="form-control" placeholder="Password" required="" ng-model="user.password" name="password">
+                <label style="color:red" class="pull-left control-label" ng-show="register.password.$dirty">
+                    <label ng-show="register.password.$error.required">必填</label>
+                </label>
             </div>
-            <div class="form-group">
-                <label class="col-sm-5 control-label">姓名</label>
-                <div class="col-sm-7">
-                    <input type="text" class="col-lg-4 input-lg" title="Enter your name."
-                           placeholder="Enter your name" name="name" ng-model="user.name" required>
-                    <label style="color:red" class="pull-left control-label" ng-show="register.name.$dirty">
-                        <label ng-show="register.name.$error.required">必填</label>
-                    </label>
-                </div>
-            </div>
-            <button class="btn btn-success" ng-click="logon()" ng-disabled="register.$invalid&&!user.judgement">注册</button>
+            <button type="button" class="btn btn-primary block full-width m-b" ng-click="logon()" ng-disabled="register.$invalid">Register</button>
+
+            <p class="text-muted text-center">
+                <small>Already have an account?</small>
+            </p>
+            <a class="btn btn-sm btn-white btn-block" href="#/login">Login</a>
         </form>
+        <p class="m-t">
+            <small>Student Association Management System by tppppp4free@gmail.com</small>
+        </p>
     </div>
 </div>
+

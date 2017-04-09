@@ -33,37 +33,49 @@ indexApp
         }
     })
     .controller("register",function($scope, $http,$log) {
-        var user = $scope.user = {};
-        $scope.judgement = false;
-        var judge = function () {
-            var pwd1 = $scope.user.pwd1;
-            var pwd2 = $scope.user.pwd2;
-            if ((pwd1 !== pwd2) && pwd2 !== null && pwd2 !== undefined && pwd2 !== "") {
-                $scope.user.judgement = true;
-            } else {
-                $scope.user.judgement = false;
-            }
+        /*
+        *  checkAccount true means ID exist
+        * */
+        $scope.user = {checkAccount:false};
+        // $scope.judgement = false;
+        // var judge = function () {
+        //     var pwd1 = $scope.user.pwd1;
+        //     var pwd2 = $scope.user.pwd2;
+        //     if ((pwd1 !== pwd2) && pwd2 !== null && pwd2 !== undefined && pwd2 !== "") {
+        //         $scope.user.judgement = true;
+        //     } else {
+        //         $scope.user.judgement = false;
+        //     }
+        // };
+        // $scope.$watch('user.pwd2', judge);
+        $scope.focus = function(){
+          if($scope.user.checkAccount){
+              $scope.user.checkAccount=false;
+          }
         };
-        $scope.$watch('user.pwd2', judge);
+        // $scope.$watch('user.email',focus);
         $scope.logon = function(){
-            $log.log($scope.user);
+            $log.log("注册前"+$scope.user);
             $http({
                 method : 'post',
                 url : 'register',
                 data : {
                     email : $scope.user.email,
-                    password : $scope.user.pwd2,
+                    password : $scope.user.password,
                     name : $scope.user.name
                 }
-            }).success(function successCallback(data,status){
+            }).success(function successCallback(data){
                 $log.log(data);
-                $log.log(status);
                 if(data) {
+                    alert("注册成功！");
                     window.location = 'index.html';
+                }
+                else {
+                    $scope.user.checkAccount = true;
                 }
             }).error(function error(data){
                 $log.log(data);
-                window.location = 'views/success.html';
+                window.location = 'views/error.html';
             });
         };
     });
