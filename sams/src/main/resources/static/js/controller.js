@@ -81,3 +81,14 @@ indexApp
     });
 
 
+// mainApp.controller("sidebarCtr",function($scope){
+//     $scope.collapse = "nav nav-second-level collapse";
+//     $scope.a = function () {
+//         if($scope.collapse == "nav nav-second-level collapse"){
+//             $scope.collapse = "nav nav-second-level collapse in";
+//         }
+//         else{
+//             $scope.collapse = "nav nav-second-level collapse";
+//         }
+//     }
+// });

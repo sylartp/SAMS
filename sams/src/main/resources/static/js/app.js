@@ -3,7 +3,7 @@
  */
 'use strict';
 var indexApp = angular.module("indexApp",['ngRoute']);
-indexApp.config(['$routeProvider',function ($routeProvider) {
+indexApp.config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
     $routeProvider.when('/login',{
         templateUrl: 'views/login.html'
     }).when('/register',{
@@ -12,4 +12,10 @@ indexApp.config(['$routeProvider',function ($routeProvider) {
     }).when('/forget',{
         templateUrl: 'view/forget.html'
     }).otherwise({redirectTo:'/login'});
+    $locationProvider.html5Mode({
+        enabled:true,
+        requireBase:false
+    });
 }]);
+
+var mainApp = angular.module("mainApp",[]);
