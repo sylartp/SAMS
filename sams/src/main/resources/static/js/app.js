@@ -11,11 +11,11 @@ indexApp.config(['$routeProvider','$locationProvider',function ($routeProvider,$
         controller: 'register'
     }).when('/forget',{
         templateUrl: 'view/forget.html'
+    }).when('/main',{
+        templateUrl:'views/main.html'
     }).otherwise({redirectTo:'/login'});
     $locationProvider.html5Mode({
         enabled:true,
         requireBase:false
     });
 }]);
-
-var mainApp = angular.module("mainApp",[]);

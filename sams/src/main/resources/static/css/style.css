@@ -49,6 +49,10 @@ h5 {
 .nav > li.active > a {
     color: #ffffff;
 }
+
+.navbar-default .nav > li > a{
+    background-color: #293846;
+}
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus {
     background-color: #293846;
@@ -170,7 +174,7 @@ h5 {
 .nav-header {
     padding: 33px 25px;
     background-color: #2f4050;
-    background-image: url("patterns/header-profile.png");
+    background-image: url("../img/header-profile.png");
 }
 .pace-done .nav-header {
     transition: all 0.4s;
@@ -3486,10 +3490,10 @@ body.full-height-layout #page-wrapper {
     height: 100%;
 }
 #page-wrapper {
-    min-height: auto;
+    min-height: inherit;
 }
 body.boxed-layout {
-    background: url('patterns/shattered.png');
+    background: url('../img/shattered.png');
 }
 body.boxed-layout #wrapper {
     background-color: #2f4050;
@@ -6999,10 +7003,10 @@ body.landing-page {
     width: 100%;
 }
 .landing-page .header-back.one {
-    background: url('../img/landing/header_one.jpg') 50% 0 no-repeat;
+    background: url('../img/header_one.jpg') 50% 0 no-repeat;
 }
 .landing-page .header-back.two {
-    background: url('../img/landing/header_two.jpg') 50% 0 no-repeat;
+    background: url('../img/header_two.jpg') 50% 0 no-repeat;
 }
 .landing-page .carousel {
     height: 470px;
@@ -7756,7 +7760,7 @@ body.rtls.top-navigation .footer.fixed {
 }
 .skin-1 .nav-header {
     background-color: #0e9aef;
-    background-image: url('patterns/header-profile-skin-1.png');
+    background-image: url('../img/header-profile-skin-1.png');
 }
 .skin-1.mini-navbar .nav-second-level {
     background: #3e495f;
@@ -7862,7 +7866,7 @@ body.skin-2 {
 }
 .skin-2 .nav-header {
     background-color: #23c6c8;
-    background-image: url('patterns/header-profile-skin-2.png');
+    background-image: url('../img/header-profile-skin-2.png');
 }
 .skin-2.mini-navbar .nav-second-level {
     background: #ededed;

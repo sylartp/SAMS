@@ -7,7 +7,7 @@ indexApp
         $scope.$location = $location;
         $scope.$routeParams = $routeParams;
     })
-    .controller("login", function ($scope, $http,$log) {
+    .controller("login", function ($scope, $http,$log,$location) {
         $scope.user = {};
         $scope.submit = function () {
             $log.log($scope.user);
@@ -22,7 +22,7 @@ indexApp
                 console.log(resp.data);
                 if(resp.data) {
                     alert("登陆成功");
-                    window.location = 'views/main.html';
+                    $location.path('/main');
                 }else {
                     alert("用户名、密码不存在");
                 }

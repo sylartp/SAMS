@@ -1,35 +1,10 @@
-<!DOCTYPE html>
-<html ng-app="mainApp">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>个人中心</title>
-
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/font-awesome.css" rel="stylesheet">
-
-    <!-- Toastr style -->
-    <link href="../css/toastr.min.css" rel="stylesheet">
-
-    <!-- Gritter -->
-    <link href="../css/jquery.gritter.css" rel="stylesheet">
-
-    <link href="../css/animate.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-</head>
-
-<body>
 <div id="wrapper">
     <nav class="navbar-default navbar-static-side" role="navigation">
-        <div class="sidebar-collapse" ng-controller="sidebarCtr">
+        <div class="sidebar-collapse">
             <ul class="nav" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="../img/userImg/default.png"/>
+                            <img alt="image" class="img-circle" src="img/userImg/default.png"/>
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong
@@ -63,7 +38,8 @@
                     <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
                 </li>
                 <li>
-                    <a href="#" class="dropdown-toggle"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span
+                    <a href="#" class="dropdown-toggle"><i class="fa fa-bar-chart-o"></i> <span
+                            class="nav-label">Graphs</span><span
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li>Flot Charts</li>
@@ -1339,55 +1315,43 @@
             </div>
 
         </div>
-
-
     </div>
 </div>
 
-<!-- Mainly scripts -->
-<script src="../lib/jquery-3.1.1.min.js"></script>
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../lib/jquery.metisMenu.js"></script>
-<script src="../lib/jquery.slimscroll.min.js"></script>
-<script src="../lib/angular.js"></script>
-<script src="../lib/angular-route.js"></script>
-<script src="../js/app.js"></script>
-<script src="../js/controller.js"></script>
-
+<script src="lib/jquery.metisMenu.js"></script>
+<script src="lib/jquery.slimscroll.min.js"></script>
 <!-- Flot -->
-<script src="../lib/jquery.flot.js"></script>
-<script src="../lib/jquery.flot.tooltip.min.js"></script>
-<script src="../lib/jquery.flot.spline.js"></script>
-<script src="../lib/jquery.flot.resize.js"></script>
-<script src="../lib/jquery.flot.pie.js"></script>
+<script src="lib/jquery.flot.js"></script>
+<script src="lib/jquery.flot.tooltip.min.js"></script>
+<script src="lib/jquery.flot.spline.js"></script>
+<script src="lib/jquery.flot.resize.js"></script>
+<script src="lib/jquery.flot.pie.js"></script>
 
 <!-- Peity -->
-<script src="../lib/jquery.peity.min.js"></script>
-<script src="../js/peity-demo.js"></script>
+<script src="lib/jquery.peity.min.js"></script>
+<script src="js/peity-demo.js"></script>
 
 <!-- Custom and plugin javascript -->
-<script src="../lib/inspinia.js"></script>
-<script src="../lib/pace.min.js"></script>
+<script src="lib/inspinia.js"></script>
+<script src="lib/pace.min.js"></script>
 
 <!-- jQuery UI -->
-<script src="../lib/jquery-ui.min.js"></script>
+<script src="lib/jquery-ui.min.js"></script>
 
 <!-- GITTER -->
-<script src="../lib/jquery.gritter.min.js"></script>
+<script src="lib/jquery.gritter.min.js"></script>
 
 <!-- Sparkline -->
-<script src="../lib/jquery.sparkline.min.js"></script>
+<script src="lib/jquery.sparkline.min.js"></script>
 
 <!-- Sparkline demo data  -->
-<script src="../js/sparkline-demo.js"></script>
+<script src="js/sparkline-demo.js"></script>
 
 <!-- ChartJS-->
-<script src="../lib/Chart.min.js"></script>
+<script src="lib/Chart.min.js"></script>
 
 <!-- Toastr -->
-<script src="../lib/toastr.min.js"></script>
-
-
+<script src="lib/toastr.min.js"></script>
 <script>
     $(document).ready(function () {
         setTimeout(function () {
@@ -1504,5 +1468,3 @@
     ga('send', 'pageview');
 
 </script>
-</body>
-</html>
