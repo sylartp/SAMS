@@ -24,4 +24,9 @@ public class UserService {
     public int addUser(User user){
         return userMapper.addUser(user);
     }
+
+    @Transactional
+    public int deleteUser(String email){
+        return userMapper.deleteUser(email);
+    }
 }

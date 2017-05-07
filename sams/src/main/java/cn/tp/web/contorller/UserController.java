@@ -19,12 +19,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-    public ModelAndView index() {
-        return new ModelAndView("index");
-    }
-
-    //注册
+    //注册 && 判断email账号是否已经存在
     @RequestMapping(value = "/register", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public boolean register(@RequestBody User user) {
         User checkUser = userService.findUserByEmail(user.getEmail());
@@ -36,7 +31,7 @@ public class UserController {
         return false;
     }
 
-    //登录 && 判断email账号是否已经存在
+    //登录
     @RequestMapping(value = "/login", method = RequestMethod.POST, consumes = "application/json")
     public boolean login(@RequestBody User user) {
         User realUser = userService.findUserByEmail(user.getEmail());
