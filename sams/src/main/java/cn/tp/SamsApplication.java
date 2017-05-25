@@ -14,9 +14,5 @@ public class SamsApplication {
         SpringApplication.run(SamsApplication.class, args);
     }
 
-    @RequestMapping(value = "/{[path:[^\\.]*}")
-    public String redirect() {
-        return "forward:/";
-    }
 
 }

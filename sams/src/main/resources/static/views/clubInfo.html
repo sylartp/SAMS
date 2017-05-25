@@ -1,0 +1,25 @@
+<div class="row  border-bottom white-bg dashboard-header" ng-controller="clubInfo">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>社团名</th>
+            <th>介绍</th>
+            <th>当前人数</th>
+            <th>最大人数</th>
+            <th>创建时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="club in clubs">
+            <td>{{club.id}}</td>
+            <td>{{club.name}}</td>
+            <td>{{club.content}}</td>
+            <td>{{club.presentNum}}</td>
+            <td>{{club.maxNum}}</td>
+            <td>{{club.createTime}}</td>
+            <td><a class="btn btn-default" ng-click="add(club)">加入</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
