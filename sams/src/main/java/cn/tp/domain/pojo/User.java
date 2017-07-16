@@ -13,9 +13,28 @@ public class User {
     private Date birthday;
     private String[] hobby;
     private String image;
-    private int role_id;
-    private int major_id;
-    private int club_id;
+    private String introduction;
+    private String clubName;
+    private int roleId;
+    private int majorId;
+    private int clubId;
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
+
+    public String getClubName() {
+        return clubName;
+    }
+
+    public void setClubName(String clubName) {
+        this.clubName = clubName;
+    }
+
 
     public User() {
         super();
@@ -67,29 +86,7 @@ public class User {
         this.image = image;
     }
 
-    public int getRole_id() {
-        return role_id;
-    }
 
-    public void setRole_id(int role_id) {
-        this.role_id = role_id;
-    }
-
-    public int getMajor_id() {
-        return major_id;
-    }
-
-    public void setMajor_id(int major_id) {
-        this.major_id = major_id;
-    }
-
-    public int getClub_id() {
-        return club_id;
-    }
-
-    public void setClub_id(int club_id) {
-        this.club_id = club_id;
-    }
 
     public String getName() {
         return name;
@@ -103,7 +100,30 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String password) {this.password = password;}
+
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
+
+    public int getMajorId() {
+        return majorId;
+    }
+
+    public void setMajorId(int majorId) {
+        this.majorId = majorId;
+    }
+
+    public int getClubId() {
+        return clubId;
+    }
+
+    public void setClubId(int clubId) {
+        this.clubId = clubId;
     }
 }
+

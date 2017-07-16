@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="sams:war">
-    <output-path>$PROJECT_DIR$/sams/target</output-path>
-    <root id="archive" name="sams-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="sams:war exploded" />
-    </root>
-  </artifact>
-</component>
